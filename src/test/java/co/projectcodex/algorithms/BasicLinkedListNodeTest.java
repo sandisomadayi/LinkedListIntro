@@ -21,7 +21,12 @@ public class BasicLinkedListNodeTest {
         Node<String> lastNode = apple;
 
         // write code here to find the last Node
-
+        while(true) {
+            lastNode = lastNode.getNext();
+            if (Node.hasNext() == null) {
+                break;
+            }
+        }
         assertEquals("Orange", lastNode.getValue());
     }
 
@@ -44,6 +49,12 @@ public class BasicLinkedListNodeTest {
         int total = 0;
 
         // sum all the value which is a multiple of 2 into total
+        while(true) {
+            currentNode = currentNode.getNext();
+            if (currentNode.getValue()%2 == 0) {
+                total += currentNode.getValue();
+            }
+        }
 
         assertEquals(40, total);
     }
